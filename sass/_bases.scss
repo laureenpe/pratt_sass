@@ -1,0 +1,55 @@
+//Estilo a nuestra página utilizando las variables que declaramos en nuestro archivo _variables.scss
+
+*{
+    font-family: $body_font;
+}
+.navbar-nav{
+    li:hover{
+        background-color: $background_uno;
+        a:hover{
+            color: $color_text_titulo;
+        }
+    }
+}
+
+.seccion_uno{
+    background-color: $background_uno;
+    padding-top: $padding;
+    h1,h3{
+        color: $color_text_titulo;
+        text-align: $text_center;
+    }
+}
+
+//Utilizaremos nuestro mixnin utilizando la sintaxis @include excel(), asi le daremos estilos ya predefinidos en nuestro archivo _mixnin.scss
+
+.seccion_dos{
+    background-color: $background_dos;
+    padding: $padding_footer;
+    @include excel();
+}
+
+//Daremos estilos a nuestras etiquetas p utilizando mixin
+.seccion_tres{
+    background-color: $background_dos;
+    padding: $padding_footer;
+    .desktop{
+        width: $width_desktop;
+        padding: $padding;
+    }
+    h1,h2,h4{
+        text-align: $text_center;
+    }
+    p{
+        @include excel();
+    }
+}
+
+//media queries para darle padding en version mobile
+
+@media (max-width:600px){
+    .seccion_uno{
+        background-color: $background_uno;
+        padding-top: $padding_media;
+    }
+}
